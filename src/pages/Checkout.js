@@ -11,7 +11,7 @@ import {
   deleteUserCart,
   updateProfile,
 } from "../features/user/userSlice";
-import { PayPalButton } from "react-paypal-button-v2";
+// import { PayPalButton } from "react-paypal-button-v2";
 import { paymentService } from "../features/payment/paymentService";
 import Meta from "../components/Meta";
 import BreadCrumb from "../components/BreadCrumb";
@@ -432,14 +432,15 @@ const Checkout = () => {
                 </h5>
               </div>
               {paymentMethod === "paypal-card" && sdkReady ? (
-                <PayPalButton
-                  amount={convertTotalAmountUSD}
-                  // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                  onSuccess={onSuccessPaypal}
-                  onError={() => {
-                    alert("Error");
-                  }}
-                />
+                // <PayPalButton
+                //   amount={convertTotalAmountUSD}
+                //   // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
+                //   onSuccess={onSuccessPaypal}
+                //   onError={() => {
+                //     alert("Error");
+                //   }}
+                // />
+                <button/>
               ) : (
                 <button
                   className="button border-0 w-100 mt-3"
