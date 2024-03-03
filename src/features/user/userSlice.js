@@ -605,7 +605,7 @@ export const authSlice = createSlice({
         state.isError = true;
         state.isSuccess = false;
         state.message = action.payload;
-        console.log(action.payload);
+        // console.log(action.payload);
       })
 
       .addCase(resetState, () => initialState);

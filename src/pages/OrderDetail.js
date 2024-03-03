@@ -16,7 +16,7 @@ const OrderDetail = () => {
 
   const aOrderState = useSelector((state) => state?.auth?.aOrder);
 
-  console.log("aOrderState", aOrderState);
+  // console.log("aOrderState", aOrderState);
 
   useEffect(() => {
     dispatch(getAOrder(getOrderId));

@@ -311,7 +311,7 @@ const Header = () => {
               <div className="input-group">
                 <Typeahead
                   id="pagination-example"
-                  onPaginate={() => console.log("Results paginated")}
+                  onPaginate={() => console.log('')}
                   onChange={(selected) => {
                     navigate(`/product/${selected[0]?.prod}`);
                     dispatch(getAProduct(selected[0]?.prod));

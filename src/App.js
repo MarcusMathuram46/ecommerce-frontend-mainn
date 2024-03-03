@@ -69,7 +69,7 @@ function App() {
       if (decodedRefreshToken?.exp > currentTime.getTime() / 1000) {
         const data = refreshToken;
         config.headers['Authorization'] = `Bearer ${data}`
-        console.log("refreshToken Successfully");
+        // console.log("refreshToken Successfully");
       } else {
         toast.warning("Your login session has expired, please log in again to continue using!");
         localStorage.clear();

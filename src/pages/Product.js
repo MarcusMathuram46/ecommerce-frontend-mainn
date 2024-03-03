@@ -31,7 +31,7 @@ const Product = () => {
     limit: 10
 });
 
-console.log('paginate', paginate);
+// console.log('paginate', paginate);
   const pCategoryState = useSelector((state) => state?.product?.pCategories);
 
 
@@ -67,6 +67,181 @@ console.log('paginate', paginate);
           "createdAt": "2024-02-19T11:52:50.874Z",
           "updatedAt": "2024-02-19T11:52:50.874Z"
       }];
+  
+      const data2 = [{
+        "id": "65c21f6fa39a819c95ba89c9",
+        "title": "Samsung Galaxy Watch4",
+        "slug": "samsung-galaxy-watch4",
+        "description": "Samsung Galaxy Watch4 Bluetooth(4.0 cm, White, Compatible with Android only",
+        "price": 12000,
+        "brand": "Samsung",
+        "category": "Watch",
+        "tags": "product",
+        "color": "65c2137da39a819c95ba8966",
+        "quantity": 100,
+        "sold": 0,
+        "numViews": 0,
+        "size": "4.0cm",
+        "weight": "26 gram",
+        "lifespan": "4 years",
+        "warranty": "12 month",
+        "totalrating": "0",
+        "supplierID": "65b9e615dfbf90646b1d6efc",
+        "images": [{"url":"../images/watch.jpg"}],
+        "ratings": [],
+        "createdAt": "2024-02-06T12:00:47.401Z",
+        "updatedAt": "2024-02-06T12:10:03.079Z"
+    }];
+
+    const data3 =[{
+      "_id": "65c223eba39a819c95ba89d8",
+        "title": "Apple Iphone 13",
+        "slug": "apple-iphone-13",
+        "description": "Apple Iphone 13(red,128 GB)",
+        "price": 53000,
+        "brand": "Apple Iphone 13",
+        "category": "Mobile",
+        "tags": "product",
+        "color": "65c21bcfa39a819c95ba89a1",
+        "quantity": 100,
+        "sold": 0,
+        "numViews": 0,
+        "size": "6.1-inch",
+        "weight": " 174gram",
+        "lifespan": "8 years",
+        "warranty": "24 month",
+        "totalrating": "0",
+        "supplierID": "65b9e615dfbf90646b1d6efc",
+        "images": [{"url":"../images/im5g.jpeg"}],
+        "ratings": [],
+        "createdAt": "2024-02-06T12:19:55.382Z",
+        "updatedAt": "2024-02-06T12:31:35.493Z"
+    }]
+    const data4 =[{
+      "id": "65c2265aa39a819c95ba89e7",
+        "title": "Xiamomi Pad 5",
+        "slug": "xiamomi-pad-5",
+        "description": "Xiamomi Pad 5",
+        "price": 23000,
+        "brand": "Xiamomi",
+        "category": "Mobile",
+        "tags": "product",
+        "color": "65c22628a39a819c95ba89e3",
+        "quantity": 100,
+        "sold": 0,
+        "numViews": 0,
+        "size": "11-inch",
+        "weight": " 300gram",
+        "lifespan": "5 years",
+        "warranty": "24 month",
+        "totalrating": "0",
+        "supplierID": "65b9e615dfbf90646b1d6efc",
+        "images": [{"url":"../images/tab3.jpg"}],
+        "ratings": [],
+        "createdAt": "2024-02-06T12:30:18.577Z",
+        "updatedAt": "2024-02-06T12:30:18.577Z"
+    }]
+
+    const data5 =[{
+      "_id": "65e3754024c24e70987100e8",
+      "title": "Apple Watch Ultra",
+      "slug": "apple-watch-ultra",
+      "description": "hey this is Apple Watch",
+      "price": 100000,
+      "brand": "Apple",
+      "category": "Watch",
+      "tags": "product",
+      "color": "65c2137da39a819c95ba8966",
+      "quantity": 100,
+      "sold": 0,
+      "numViews": 0,
+      "size": "3inch",
+      "weight": "250gram",
+      "lifespan": "7years",
+      "warranty": "24months",
+      "totalrating": "0",
+      "supplierID": "65c3d95bfd41134f9d0554db",
+      "images": [{"url":"../images/catbanner-02.jpg"}],
+      "ratings": [],
+      "createdAt": "2024-03-02T18:51:44.601Z",
+      "updatedAt": "2024-03-02T18:51:44.601Z"
+    }]
+
+    const data6 =[{
+      "id": "65e376a424c24e70987100ee",
+      "title": "Apple 13 Pro Max",
+    "slug": "apple-13-pro-max",
+    "description": "hey this is Apple Iphone",
+    "price": 150000,
+    "brand": "Apple",
+    "category": "Mobile",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "6inch",
+    "weight": "750gram",
+    "lifespan": "10years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/famous-3.webp"}],
+    "ratings": [],
+    "createdAt": "2024-03-02T18:57:40.260Z",
+    "updatedAt": "2024-03-02T18:57:40.260Z",
+    }]
+
+    const data7 =[{
+      "id": "65e3778824c24e70987100f2",
+      "title": "Apple Watch se",
+    "slug": "apple-watch-se",
+    "description": "hey this is Apple Watch se",
+    "price": 35000,
+    "brand": "Apple",
+    "category": "Watch",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "2inch",
+    "weight": "150gram",
+    "lifespan": "7years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/img2.jpeg"}],
+    "ratings": [],
+    "createdAt": "2024-03-02T19:01:28.549Z",
+    "updatedAt": "2024-03-02T19:01:28.549Z",
+    }]
+
+    const data8 =[{
+      "id": "65e378e424c24e70987100fa",
+      "title": "Sony Alpha 6",
+      "slug": "sony-alpha-6",
+      "description": "hey this is Sony Alpha 6 Camera",
+      "price": 50000,
+      "brand": "Sony",
+      "category": "camera",
+      "tags": "product",
+      "color": "[65c2137da39a819c95ba8966]",
+      "quantity": 100,
+      "sold": 0,
+      "numViews": 0,
+      "size": "4inch",
+      "weight": "450gram",
+      "lifespan": "10years",
+      "warranty": "24months",
+      "totalrating": "0",
+      "supplierID": "65c3d95bfd41134f9d0554db",
+      "images": [{"url":"../images/camera1.jpg"}],
+      "ratings": [],
+      "createdAt": "2024-03-02T19:07:16.618Z",
+      "updatedAt": "2024-03-02T19:07:16.618Z",
+        
+    }]
 
 
   //------------------------------------------------ useEffect end---------------------------------------------------- 
@@ -343,6 +518,22 @@ console.log('paginate', paginate);
             <div className='products-list pb-3 col-12 home-page'>
               <div className='row'>
                 <ProductCard data={data1} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data3} grid={grid} />
+                <ProductCard data={data4} grid={grid} />
+                <ProductCard data={data5} grid={grid} />
+                <ProductCard data={data6} grid={grid} />
+                <ProductCard data={data7} grid={grid} />
+                <ProductCard data={data8} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data2} grid={grid} />
               </div>
             </div>
             <div className='col-12 text-center mt-2'>

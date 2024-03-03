@@ -44,7 +44,7 @@ const Signup = () => {
     validationSchema: SignUpSchema,
     onSubmit: async (values, { setSubmitting }) => {
       try {
-        console.log('Form values:', values);
+        // console.log('Form values:', values);
         // Dispatch the registerUser action creator
         await dispatch(registerUser(values));
         // If registration is successful, redirect to login page

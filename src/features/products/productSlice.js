@@ -6,9 +6,9 @@ export const getAllProducts = createAsyncThunk(
   "product/getAllProducts",
   async (_, thunkAPI) => {
     try {
-      console.log('getting products');
+      // console.log('getting products');
       const response = await productService.getAllProducts();
-      console.log('getting products', response);
+      // console.log('getting products', response);
       return response.data;
     } catch (error) {
       // Extracting necessary information and returning
