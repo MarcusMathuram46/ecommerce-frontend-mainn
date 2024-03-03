@@ -115,7 +115,7 @@ const Home = () => {
                       alt="slider"
                       width="100%"
                       preview={false}
-                      height="299px"
+                      height="250px"
                     />
                   </div>
                 );

@@ -9,9 +9,11 @@ import { getAllProducts, getCategories } from '../features/products/productSlice
 import { useLocation } from 'react-router-dom';
 import { AiFillFilter, AiOutlineClose } from 'react-icons/ai';
 import { Pagination } from 'antd';
+import { SpinningCircles } from 'react-loading-icons'
 
 const Product = () => {
   const location = useLocation();
+  const [loading, setLoading] = useState(false);
 
 
   const [grid, setGrid] = useState(4);
@@ -37,9 +39,12 @@ const Product = () => {
 
   //------------------------------------------------ useEffect start---------------------------------------------------- 
   const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getAllProducts());
-  }, []);
+
+useEffect(() => {
+  setLoading(true); // Set loading to true before fetching data
+  dispatch(getAllProducts()).then(() => setLoading(false)); // Dispatch action and set loading to false when data is fetched
+}, []); // Run only once when the component mounts
+
 
   const productState = useSelector((state) => state.product.products);
   const data1 = [{
@@ -243,31 +248,298 @@ const Product = () => {
         
     }]
 
+    const data9 = [{
+      "id": "65e4c4be5926f6b2ea38212c",
+      "title": "Htc U play",
+    "slug": "htc-u-play",
+    "description": "hey this is Htc U play",
+    "price": 15000,
+    "brand": "Htc",
+    "category": "mobile",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "5inch",
+    "weight": "650gram",
+    "lifespan": "7years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/mobile.jpg"}],
+    "ratings": [],
+    "createdAt": "2024-03-03T18:43:10.252Z",
+    "updatedAt": "2024-03-03T18:43:10.252Z",
+    "__v": 0
+    }]
+
+    const data10 = [{
+      "id": "65e4c7245926f6b2ea382130",
+      "title": "Iphone 14 plus",
+    "slug": "iphone-14-plus",
+    "description": "hey this is Apple iphone 14 plus",
+    "price": 100000,
+    "brand": "Apple",
+    "category": "mobile",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "6inch",
+    "weight": "650gram",
+    "lifespan": "7years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/mobile1.png"}],
+    "ratings": [],
+    "createdAt": "2024-03-03T18:53:24.891Z",
+    "updatedAt": "2024-03-03T18:53:24.891Z",
+    }]
+
+    const data11 = [{
+      "id": "65e4df0d5926f6b2ea382134",
+      "title": "Samsung Tv",
+    "slug": "samsung-tv",
+    "description": "hey this is Samsung Tv",
+    "price": 100000,
+    "brand": "Samsung",
+    "category": "tv",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "40inch",
+    "weight": "3kg",
+    "lifespan": "10years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/tv.jpg"}],
+    "ratings": [],
+    "createdAt": "2024-03-03T20:35:25.645Z",
+    "updatedAt": "2024-03-03T20:35:25.645Z",
+    }]
+
+    const data12 = [{
+      "_id": "65e4e0975926f6b2ea38213c",
+      "title": "Hp pavillion laptop",
+    "slug": "hp-pavillion-laptop",
+    "description": "hey this is Hp laptop",
+    "price": 80000,
+    "brand": "Hp",
+    "category": "laptop",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "13inch",
+    "weight": "1kg",
+    "lifespan": "10years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/laptop.jpg"}],
+    "ratings": [],
+    "createdAt": "2024-03-03T20:41:59.945Z",
+    "updatedAt": "2024-03-03T20:41:59.945Z",
+
+    }]
+
+    const data13 = [{
+      "id": "65e4e29b5926f6b2ea382140",
+      "title": "Apple Macbook Air",
+    "slug": "apple-macbook-air",
+    "description": "hey this is Apple Macbook Air",
+    "price": 100000,
+    "brand": "Apple",
+    "category": "laptop",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "15inch",
+    "weight": "2kg",
+    "lifespan": "10years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/laptop1.jpg"}],
+    "ratings": [],
+    "createdAt": "2024-03-03T20:50:35.779Z",
+    "updatedAt": "2024-03-03T20:50:35.779Z",
+    }]
+
+    const data14 = [{
+      "id": "65e4ebae5926f6b2ea382148",
+      "title": "Apple Airpods Pro",
+    "slug": "apple-airpods-pro",
+    "description": "hey this is Apple Airpods Pro",
+    "price": 20000,
+    "brand": "Apple",
+    "category": "headphone",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "5inch",
+    "weight": "500gram",
+    "lifespan": "5years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "images": [{"url":"../images/acc.jpg"}],
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "ratings": [],
+    "createdAt": "2024-03-03T21:29:18.258Z",
+    "updatedAt": "2024-03-03T21:29:18.258Z",
+      
+    }]
+
+    const data15 = [{
+      "_id": "65e4ee335926f6b2ea38214c",
+      "title": "Samsung NX20 Camera",
+    "slug": "samsung-nx20-camera",
+    "description": "hey this is Samsung NX20 Camera ",
+    "price": 40000,
+    "brand": "Samsung",
+    "category": "Camera",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "3inch",
+    "weight": "1000gram",
+    "lifespan": "7years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/camera.jpg"}],
+    "ratings": [],
+    "createdAt": "2024-03-03T21:40:03.354Z",
+    "updatedAt": "2024-03-03T21:40:03.354Z",
+    }]
+
+    const data16 = [{
+      "id": "65e4ef0b5926f6b2ea382150",
+      "title": "Apple Ipad",
+    "slug": "apple-ipad",
+    "description": "hey this is Apple Ipad ",
+    "price": 40000,
+    "brand": "Apple",
+    "category": "tablet",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "12inch",
+    "weight": "3000gram",
+    "lifespan": "7years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/catbanner-03.jpg"}],
+    "ratings": [],
+    "createdAt": "2024-03-03T21:43:39.378Z",
+    "updatedAt": "2024-03-03T21:43:39.378Z",
+    }]
+
+    const data17 = [{
+      "id": "65e4efb55926f6b2ea382154",
+      "title": "Samsung Galaxy headphone",
+    "slug": "samsung-galaxy-headphone",
+    "description": "hey this is Samsung Galaxy headphone",
+    "price": 8000,
+    "brand": "Samsung",
+    "category": "headphone",
+    "tags": "product",
+    "color": "[65c2137da39a819c95ba8966]",
+    "quantity": 100,
+    "sold": 0,
+    "numViews": 0,
+    "size": "5inch",
+    "weight": "3000gram",
+    "lifespan": "7years",
+    "warranty": "24months",
+    "totalrating": "0",
+    "supplierID": "65c3d95bfd41134f9d0554db",
+    "images": [{"url":"../images/headphone.jpg"}],
+    "ratings": [],
+    "createdAt": "2024-03-03T21:46:29.665Z",
+    "updatedAt": "2024-03-03T21:46:29.665Z",
+    }]
+
+    // const data18 = [{
+    //   "id": "65e4f3d25926f6b2ea382158",
+    //   "title": "Samsung Note",
+    // "slug": "samsung-note",
+    // "description": "hey this is Samsung Note",
+    // "price": 120000,
+    // "brand": "Samsung",
+    // "category": "mobile",
+    // "tags": "product",
+    // "color": "[65c2137da39a819c95ba8966]",
+    // "quantity": 100,
+    // "sold": 0,
+    // "numViews": 0,
+    // "size": "6inch",
+    // "weight": "2000gram",
+    // "lifespan": "7years",
+    // "warranty": "24months",
+    // "totalrating": "0",
+    // "supplierID": "65c3d95bfd41134f9d0554db",
+    // "images": [{"url":"../images/samsung note11.jpg"}],
+    // "ratings": [],
+    // "createdAt": "2024-03-03T22:04:02.687Z",
+    // "updatedAt": "2024-03-03T22:04:02.687Z",
+    // }]
+
 
   //------------------------------------------------ useEffect end---------------------------------------------------- 
 
 
   // FUNCTION
   const removeAllFilter = () => {
-    setTag(null);
-    setCategory(null);
-    setBrand(null);
-    setMinPrice(null);
-    setMaxPrice(null);
-    setSort("title");
-    if (location.state) {
-      delete location.state;
-    }
-  }
+    setLoading(true);
+
+    setTimeout(() => {
+
+      setTag(null);
+      setCategory(null);
+      setBrand(null);
+      setMinPrice(null);
+      setMaxPrice(null);
+      setSort("title");
+      if (location.state) {
+        delete location.state;
+      }
+      setLoading(false);
+    } , 1000 );
+  };
+
+    
+    
 
   const onChange = (current, pageSize) => {
-    setPaginate({ ...paginate, page: current, limit: pageSize })
+    setLoading(true);
+    setTimeout(() => {
+      setPaginate({ ...paginate, page: current, limit: pageSize });
+      setLoading(false);
+    }, 1000);
   };
 
   return (
     <div>
       <Meta title='Our Store' />
       <BreadCrumb title='Product' />
+      {!loading ? (
       <Container class1='store-wrapper home-wrapper-2 py-4'>
         <div className='row'>
           <div className='col-lg-3'>
@@ -525,15 +797,16 @@ const Product = () => {
                 <ProductCard data={data6} grid={grid} />
                 <ProductCard data={data7} grid={grid} />
                 <ProductCard data={data8} grid={grid} />
-                <ProductCard data={data2} grid={grid} />
-                <ProductCard data={data2} grid={grid} />
-                <ProductCard data={data2} grid={grid} />
-                <ProductCard data={data2} grid={grid} />
-                <ProductCard data={data2} grid={grid} />
-                <ProductCard data={data2} grid={grid} />
-                <ProductCard data={data2} grid={grid} />
-                <ProductCard data={data2} grid={grid} />
-                <ProductCard data={data2} grid={grid} />
+                <ProductCard data={data9} grid={grid} />
+                <ProductCard data={data10} grid={grid} />
+                <ProductCard data={data11} grid={grid} />
+                <ProductCard data={data12} grid={grid} />
+                <ProductCard data={data13} grid={grid} />
+                <ProductCard data={data14} grid={grid} />
+                <ProductCard data={data15} grid={grid} />
+                <ProductCard data={data16} grid={grid} />
+                <ProductCard data={data17} grid={grid} />
+                {/* <ProductCard data={data18} grid={grid} /> */}
               </div>
             </div>
             <div className='col-12 text-center mt-2'>
@@ -541,7 +814,11 @@ const Product = () => {
             </div>
           </div>
         </div>
+        
       </Container>
+      ):(
+      <SpinningCircles/>
+      )}
     </div>
   )
 }
