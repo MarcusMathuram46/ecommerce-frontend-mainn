@@ -1,4 +1,4 @@
-export const base_url = "https://ecommerce-app-ib6m.onrender.com/api/";
+export const base_url = "https://ecommerce-app-ib6m.onrender.com/api/"; //it is the render.com url link of the server
 
 const getTokenFromLocalStorage = localStorage.getItem("user")
   ? JSON.parse(localStorage.getItem("user"))
