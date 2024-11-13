@@ -16,17 +16,17 @@ import {
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { Image } from 'antd';
+import { Image } from "antd";
 
-import slider1 from '../images/slider1.png';
-import slider2 from '../images/slider2.jpg';
-import slider3 from '../images/slider3.jpg';
-import slider4 from '../images/slider4.jpg';
+import slider1 from "../images/slider1.png";
+import slider2 from "../images/slider2.jpg";
+import slider3 from "../images/slider3.jpg";
+import slider4 from "../images/slider4.jpg";
 
 // special product
 // import wish from '../images/wish.svg';
 // import wishlist from '../images/wishlist.svg';
-import watch from '../images/watch.jpg';
+import watch from "../images/watch.jpg";
 // import watch2 from '../images/watch-1.avif';
 import ReactStars from "react-rating-stars-component";
 // import prodcompare from '../images/prodcompare.svg';
@@ -99,28 +99,63 @@ const Home = () => {
   const addToWishList = (id) => {
     dispatch(addToWishlist({ id, config2 }));
   };
-  
+
   return (
     <>
       <Meta title="Ecommerce App" />
       <Container class1="home-wrapper-1 py-3">
         <div className="row">
           <div className="col-12">
-            <Slider {...settings}>
-              {arrImagesSlider.map((image, index) => {
-                return (
-                  <div key={index}>
-                    <Image
-                      src={image}
-                      alt="slider"
-                      width="100%"
-                      preview={false}
-                      height="250px"
-                    />
-                  </div>
-                );
-              })}
-            </Slider>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                padding: "20px 0", // Adds padding above and below the slider
+                boxSizing: "border-box",
+              }}
+            >
+              <Slider
+                {...settings}
+                style={{ width: "90%", maxWidth: "1200px" }}
+              >
+                {arrImagesSlider.map((image, index) => {
+                  return (
+                    <div
+                      key={index}
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        alignItems: "center",
+                        width: "100%",
+                        padding: "10px", // Adds padding around each image container
+                        boxSizing: "border-box",
+                        overflow: "hidden",
+                      }}
+                    >
+                      <Image
+                        src={image}
+                        alt="slider"
+                        preview={false}
+                        style={{
+                          width: "100%",
+                          height: "auto",
+                          maxHeight: "250px", // Limits height for larger screens
+                          objectFit: "cover",
+                          borderRadius: "8px", // Optional: adds rounded corners
+                          "@media (max-width: 768px)": {
+                            // Adjusts for smaller screens
+                            maxHeight: "150px",
+                            padding: "5px", // Optional: reduces padding for smaller screens
+                          },
+                        }}
+                      />
+                    </div>
+                  );
+                })}
+              </Slider>
+            </div>
           </div>
           {/* <div className="col-6">
             <div className="main-banner position-relative">
@@ -207,41 +242,43 @@ const Home = () => {
         </div>
       </Container>
       <Container className="home-wrapper-2 py-3 home-page">
-  <div className="row">
-    <div className="col-12">
-      <h3 className="section-heading">Product Categories</h3>
-    </div>
-    <div className="col-12">
-      <div className="categories d-flex justify-content-between flex-wrap align-items-center">
-        {pCategoryState &&
-          pCategoryState.map((category, index) => {
-            return (
-              <div
-                key={index}
-                onClick={() => navigate("/product", { state: category?.title })}
-                style={{ cursor: "pointer" }}
-              >
-                <div className="category-images">
-                  {category.images.map((image, idx) => (
-                    <img
-                      key={idx}
-                      src={image.url}
-                      alt={`Image ${idx}`}
-                      className="d-block"
-                      style={{ height: "75px", margin: "0 auto 8px" }}
-                    />
-                  ))}
-                </div>
-                <p style={{ fontWeight: "600", textAlign: "center" }}>
-                  {category?.title}
-                </p>
-              </div>
-            );
-          })}
-      </div>
-    </div>
-  </div>
-</Container>
+        <div className="row">
+          <div className="col-12">
+            <h3 className="section-heading">Product Categories</h3>
+          </div>
+          <div className="col-12">
+            <div className="categories d-flex justify-content-between flex-wrap align-items-center">
+              {pCategoryState &&
+                pCategoryState.map((category, index) => {
+                  return (
+                    <div
+                      key={index}
+                      onClick={() =>
+                        navigate("/product", { state: category?.title })
+                      }
+                      style={{ cursor: "pointer" }}
+                    >
+                      <div className="category-images">
+                        {category.images.map((image, idx) => (
+                          <img
+                            key={idx}
+                            src={image.url}
+                            alt={`Image ${idx}`}
+                            className="d-block"
+                            style={{ height: "75px", margin: "0 auto 8px" }}
+                          />
+                        ))}
+                      </div>
+                      <p style={{ fontWeight: "600", textAlign: "center" }}>
+                        {category?.title}
+                      </p>
+                    </div>
+                  );
+                })}
+            </div>
+          </div>
+        </div>
+      </Container>
 
       <Container class1="marquee-wrapper py-3 home-wrapper-2 home-page">
         <div className="row">

@@ -9,6 +9,7 @@
     "@testing-library/user-event": "^14.5.1",
     "antd": "^5.0.6",
     "axios": "^1.2.1",
+    "ecommerce-app": "file:",
     "formik": "^2.2.9",
     "jwt-decode": "^4.0.0",
     "moment": "^2.29.4",
