@@ -44,7 +44,7 @@ const Header = () => {
 
   useEffect(() => {
     dispatch(getAllProducts());
-  }, []);
+  });
 
   useEffect(() => {
     if (authState.user !== null) {
